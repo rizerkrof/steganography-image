@@ -1,1 +1,43 @@
-#+title: Readme
+#+title: Steganography on images
+
+
+* Table of Contents :TOC_3:noexport:
+- [[#description][Description]]
+  - [[#maintainer][Maintainer]]
+- [[#prerequisites][Prerequisites]]
+- [[#installation][Installation]]
+- [[#usage][Usage]]
+  - [[#encode][Encode]]
+  - [[#decode][Decode]]
+- [[#run-tests][Run tests]]
+
+* Description
+This is simple program to encode/decode a message into/from an image file. The program will simply change the last bit of each R, G and B values (converted to byte) by each bit of the text message byte sequence.
+
+** Maintainer
++ [[https://github.com/rizerkrof][@rizerkrof]]
+
+* Prerequisites
++ Python >= 3
+
+* Installation
+#+begin_src sh
+git clone https://github.com/rizerkrof/steganography-image.git
+#+end_src
+
+* Usage
+(Setup your self at the clone root directory)
+** Encode
+#+begin_src sh
+python3 steganography.py -e <path to your image file to encode>
+#+end_src
+** Decode
+#+begin_src sh
+python3 steganography.py -d <path to your image file to decode>
+#+end_src
+
+* Run tests
+(Setup your self at the clone root directory)
+#+begin_src sh
+python3 -m unittest discover --top-level-directory=. --start-directory=./steganography/tests/
+#+end_src
